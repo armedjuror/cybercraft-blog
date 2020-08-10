@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link href="{{ STATIC_URL }}https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"/>
+
+    <title>Blogs | Cybercraft</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Crafting the reader in you</h1>
+    </div>
+    <div class="my_content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% block navigation %}
+        {% include 'navigation.html' %}
+    {% endblock navigation %}
+</body>
+</html>

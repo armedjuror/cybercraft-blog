@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link href="{{ STATIC_URL }}https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"/>
+
+    <title>Blogs | Cybercraft</title>
+    <style>
+    body{
+        font-family: "Montserrat", sans-serif;
+    }
+    .header-post{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    color: aliceblue;
+    background: rgba(0,0,0,0.6);
+    margin: 0 auto;
+    }
+    .header-post h1{
+        margin:5% 20px;
+        font-size: 3em;
+
+    }
+    .my_content-post{
+        width:100%;
+        position:absolute;
+        top:280px;
+        background:#fff;
+        padding:3%;
+        color:#222222;
+    }
+    </style>
+</head>
+<body>
+    <div class="header-post">
+        <h1>{% block title %}{{ post.title }}{% endblock title %}</h1>
+    </div>
+    <div class="my_content-post">
+        {% block content %}
+            <div class="container">
+                <div class="row">
+                    <!-- Blog Entries Column -->
+                    <div class="col-md-8">
+                        <p class="text-muted" align="justify">{{ post.author }} | {{ post.created_on }} | {{ post.category }}</p>
+                        <p class="card-text">{{ post.content | safe }}</p>
+                    </div>
+                    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+                </div>
+            </div>
+        {% endblock content %}
+    </div>
+    {% block navigation %}
+        {% include 'navigation.html' %}
+    {% endblock navigation %}
+</body>
+</html>

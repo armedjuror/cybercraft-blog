@@ -1,0 +1,12 @@
+{% block navigation %}
+<nav>
+        <a href="{% url 'home' %}" class="logo">Cybercraft Blogs</a>
+        <input type="checkbox" name="drop" id="drop">
+        <label for="drop" id="dropBtn"><i class="fa fa-bars"></i></label>
+        <ul>
+            <li><a href="{% url 'home' %}">Read</a></li>
+            <li><a href="#" target="_blank">Write</a></li>
+            <li><a href="#" target="_blank">Involve</a></li>
+        </ul>
+</nav>
+{% endblock navigation %}
