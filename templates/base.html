@@ -21,12 +21,12 @@
     <div class="my_content">
         {% block content %}
         {% endblock content %}
+        {% block footer %}
+            {% include 'footer.html' %}
+        {% endblock footer %}
     </div>
     {% block navigation %}
         {% include 'navigation.html' %}
     {% endblock navigation %}
-    {% block footer %}
-        {% include 'footer.html' %}
-    {% endblock footer %}
 </body>
 </html>

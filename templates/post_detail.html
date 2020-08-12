@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row">
                     <!-- Blog Entries Column -->
-                    <div class="col-md-8 card">
+                    <div class="col-md-8">
                         <p class="text-muted" align="justify">{{ post.author }} | {{ post.created_on }} | {{ post.category }}</p>
                         <p class="card-text">{{ post.content | safe }}</p>
                     </div>
@@ -59,12 +59,13 @@
                 </div>
             </div>
         {% endblock content %}
+            {% block footer %}
+                {% include 'footer.html' %}
+            {% endblock footer %}
     </div>
     {% block navigation %}
         {% include 'navigation.html' %}
     {% endblock navigation %}
-    {% block footer %}
-        {% include 'footer.html' %}
-    {% endblock footer %}
+
 </body>
 </html>
